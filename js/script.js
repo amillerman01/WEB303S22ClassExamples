@@ -17,6 +17,10 @@ function makeXHRCallForJSON() {
       let responseDataObject = JSON.parse(responseDataJSON);
       console.log("This is the Object version: ", responseDataObject);
       console.log("Location value: ", responseDataObject.location);
+      //   el.innerHTML = "<div>" + responseDataObject.location + "</div>";
+      el.innerHTML = `<div>${responseDataObject.location}</div>
+                      <div>${responseDataObject.date}</div>
+                      <div><img src="${responseDataObject.map}"></div>`;
       // need to add some way to parse the data, perhaps with DOMParser
     }
   };
