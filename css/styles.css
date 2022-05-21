@@ -2,28 +2,3 @@ html, body{
     margin: 0;
     padding: 0;
 }
-
-ul#list{
-    /* display: none !important; */
-}
-ul#list:first-child{
-    color: #00ff00;
-    background-color:#999999;
-    margin: 0;
-    padding: 16px;
-}
-li{
-    margin-left: 16px;
-}
-li.hot{
-    color: #ff0000;
-}
-
-.blue{
-    color: #0000ff;
-}
-
-div, p{
-    text-align: center;
-    font-size: 24px;
-}
