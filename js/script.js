@@ -19,3 +19,13 @@ let author = document.getElementById("author");
 
 // list .html() example
 console.log("The html value of the first list item is: ", $("li").html());
+
+// list .text() example
+console.log(
+  "The text value of all the list items and their descendent is: ",
+  $("li").text()
+);
+console.log(
+  "The text value of the first list item is ACTUALLY: ",
+  $("li:first-child").text()
+);
