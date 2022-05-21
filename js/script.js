@@ -97,4 +97,22 @@ $(function () {
       2000
     );
   });
+
+  // example using .find()
+  console.log(
+    "selection of all the spans ",
+    $("div#traverseThisElement").find("span")
+  );
+  $("div#traverseThisElement")
+    .find("span")
+    .each(function (index, value) {
+      console.log("what is value? ", value);
+      if ($(value).text() != "element") {
+        $(this).css({
+          "background-color": index == 3 ? "#f00" : "#555",
+          display: "inline-block",
+          padding: "8px",
+        });
+      }
+    });
 });
