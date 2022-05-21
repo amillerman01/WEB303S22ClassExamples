@@ -3,11 +3,13 @@ $(function () {
 });
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "test.json");
-xhr.send("search=city");
+xhr.open("GET", "data/test.html");
 
 xhr.onload = function () {
   if (xhr.status === 200) {
-    // process response
+    let el = document.getElementById("content");
+    el.innerHTML = xhr.responseText;
   }
 };
+
+xhr.send();
