@@ -15,3 +15,4 @@ $author.hide();
 
 // second list example
 var $first = $('ul#list:first-child');
+$first.slideToggle(3000);
