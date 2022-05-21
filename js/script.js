@@ -29,3 +29,8 @@ console.log(
   "The text value of the first list item is ACTUALLY: ",
   $("li:first-child").text()
 );
+
+// list .html() and .text() setter examples
+// $("li").html("<span class='blue'>All Blue</span>");
+
+$("li").text("All Blue");
