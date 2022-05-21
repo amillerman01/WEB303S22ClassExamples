@@ -75,8 +75,15 @@ $(function () {
   //   });
 
   // explicit iteration
-  $("ul#iterateOverThisList li").each(function () {
-    var listItemId = $(this).attr("id");
-    $(this).append(" has an id of " + listItemId);
+  //   $("ul#iterateOverThisList li").each(function () {
+  //     var listItemId = $(this).attr("id");
+  //     $(this).append(" has an id of " + listItemId);
+  //   });
+
+  // event binding
+  $("#author").on("click", function (e) {
+    console.log("Click event happened and captured!");
+    console.log("event data looks something like this: ", e);
+    // functionality goes here when click happens
   });
 });
