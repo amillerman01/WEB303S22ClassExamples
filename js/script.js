@@ -44,4 +44,10 @@ $(function () {
 
   // The way to do this with method chaining
   $("li").hide().html("<span class='blue'>All Blue</span>").slideDown(1000);
+
+  // remove example
+  $("#author").remove();
+
+  // replaceWith example
+  $("p").replaceWith("<div>Actual content</div>");
 });

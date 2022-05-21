@@ -3,6 +3,9 @@ html, body{
     padding: 0;
 }
 
+ul{
+    display: none !important;
+}
 ul#list:first-child{
     color: #00ff00;
     background-color:#999999;
@@ -18,4 +21,9 @@ li.hot{
 
 .blue{
     color: #0000ff;
+}
+
+div, p{
+    text-align: center;
+    font-size: 24px;
 }
