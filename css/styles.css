@@ -4,7 +4,7 @@ html, body{
 }
 
 ul#list{
-    display: none !important;
+    /* display: none !important; */
 }
 ul#list:first-child{
     color: #00ff00;
