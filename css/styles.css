@@ -6,3 +6,8 @@ html, body{
 li.hot{
     color: #ff0000;
 }
+
+
+ul#list:first-child{
+    color: #00ff00;
+}
