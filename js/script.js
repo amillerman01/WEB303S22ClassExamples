@@ -34,3 +34,13 @@ console.log(
 $("li").html("<span class='blue'>All Blue</span>");
 
 $("li span").text("All Blue but different!");
+
+// chaining example
+
+// the old way without method chaining
+// $("li").hide();
+// $("li").html("<span class='blue'>All Blue</span>");
+// $("li").slideDown(1000);
+
+// The way to do this with method chaining
+$("li").hide().html("<span class='blue'>All Blue</span>").slideDown(1000);
