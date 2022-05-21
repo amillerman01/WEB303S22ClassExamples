@@ -86,4 +86,15 @@ $(function () {
     console.log("event data looks something like this: ", e);
     // functionality goes here when click happens
   });
+
+  // animation example
+  $("li").on("click", function () {
+    $(this).animate(
+      {
+        opacity: 0.0,
+        "padding-left": "+=80",
+      },
+      2000
+    );
+  });
 });
