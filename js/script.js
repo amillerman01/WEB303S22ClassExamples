@@ -50,4 +50,27 @@ $(function () {
 
   // replaceWith example
   $("p").replaceWith("<div>Actual content</div>");
+
+  // attr method
+  console.log("Github link", $("a#github-link").attr("href"));
+  // using single attribute setter
+  //   $("a#github-link").attr(
+  //     "href",
+  //     "https://github.com/amillerman01/GitHub-Tutorial"
+  //   );
+  //   // using object to set multiple attributes
+  //   $("a#github-link").attr({
+  //     href: "https://github.com/amillerman01/GitHub-Tutorial",
+  //     "aria-label": "A link to my github",
+  //   });
+  // using method to set attribute
+  $("a").attr("href", function (index, value) {
+    console.log(
+      "current anchor tag index: ",
+      index,
+      " and the current value of href is: ",
+      value
+    );
+    return "https://github.com/amillerman01/GitHub-Tutorial";
+  });
 });
