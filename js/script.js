@@ -13,8 +13,10 @@ function makeXHRCallForJSON() {
       let el = document.getElementById("content");
       let responseDataJSON = xhr.responseText;
       console.log("This is the JSON response: ", responseDataJSON);
+      // responseDataJSON.location // can't do this
       let responseDataObject = JSON.parse(responseDataJSON);
       console.log("This is the Object version: ", responseDataObject);
+      console.log("Location value: ", responseDataObject.location);
       // need to add some way to parse the data, perhaps with DOMParser
     }
   };
