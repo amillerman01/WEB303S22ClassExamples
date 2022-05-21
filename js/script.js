@@ -31,6 +31,6 @@ console.log(
 );
 
 // list .html() and .text() setter examples
-// $("li").html("<span class='blue'>All Blue</span>");
+$("li").html("<span class='blue'>All Blue</span>");
 
-$("li").text("All Blue");
+$("li span").text("All Blue but different!");
