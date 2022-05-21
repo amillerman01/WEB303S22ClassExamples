@@ -4,6 +4,22 @@ $(function () {
   });
 });
 
+function makeXHRCallForJSON() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "data/test.json");
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      let el = document.getElementById("content");
+      let responseData = xhr.responseText;
+      console.log(responseData);
+      // need to add some way to parse the data, perhaps with DOMParser
+    }
+  };
+
+  xhr.send();
+}
+
 function makeXHRCallForHTML() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "data/test.html");
@@ -27,6 +43,7 @@ function makeXHRCallForXML() {
       let el = document.getElementById("content");
       let responseData = xhr.responseXML;
       console.log(responseData);
+      // need to add some way to parse the data, perhaps with DOMParser
     }
   };
 
