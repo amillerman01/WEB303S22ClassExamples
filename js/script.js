@@ -7,4 +7,4 @@ let $author = $('#author');
 let author = document.getElementById("author");
 
 $author.hide();
-author.hide();
+// author.hide();
