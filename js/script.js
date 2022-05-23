@@ -3,73 +3,74 @@ $(function () {
     //   var busy = true;
 
     // this request comes back with good data
-    $.get("data/test.html")
-      .done(function (htmlDataFromFile, statusText, jqXHRObject) {
-        console.log(
-          "The data that came back from test.html: ",
-          htmlDataFromFile
-        );
-        console.log(
-          "The status text that came back from test.html: ",
-          statusText
-        );
-        console.log(
-          "The jqXHR object that came back from test.html: ",
-          jqXHRObject
-        );
-        $("#content-wrapper").html(htmlDataFromFile);
-      })
-      .fail(function (jqXHRObject, statusText, errorThrownValue) {
-        console.log(
-          "The jqXHRObject that came back from test.html: ",
-          jqXHRObject
-        );
-        console.log(
-          "The status text that came back from test.html: ",
-          statusText
-        );
-        console.log(
-          "The error thrown that came back from test.html: ",
-          errorThrownValue
-        );
-      })
-      .always(function () {
-        //   busy = false;
-      });
+    // $.get("data/test.html")
+    //   .done(function (htmlDataFromFile, statusText, jqXHRObject) {
+    //     console.log(
+    //       "The data that came back from test.html: ",
+    //       htmlDataFromFile
+    //     );
+    //     console.log(
+    //       "The status text that came back from test.html: ",
+    //       statusText
+    //     );
+    //     console.log(
+    //       "The jqXHR object that came back from test.html: ",
+    //       jqXHRObject
+    //     );
+    //     $("#content-wrapper").html(htmlDataFromFile);
+    //   })
+    //   .fail(function (jqXHRObject, statusText, errorThrownValue) {
+    //     console.log(
+    //       "The jqXHRObject that came back from test.html: ",
+    //       jqXHRObject
+    //     );
+    //     console.log(
+    //       "The status text that came back from test.html: ",
+    //       statusText
+    //     );
+    //     console.log(
+    //       "The error thrown that came back from test.html: ",
+    //       errorThrownValue
+    //     );
+    //   })
+    //   .always(function () {
+    //     //   busy = false;
+    //   });
+
     // this request will fail
-    $.get("data/testing.html")
-      .done(function (htmlDataFromFile, statusText, jqXHRObject) {
-        console.log(
-          "The data that came back from testing.html: ",
-          htmlDataFromFile
-        );
-        console.log(
-          "The status text that came back from testing.html: ",
-          statusText
-        );
-        console.log(
-          "The jqXHR object that came back from testing.html: ",
-          jqXHRObject
-        );
-        $("#content-wrapper").html(htmlDataFromFile);
-      })
-      .fail(function (jqXHRObject, statusText, errorThrownValue) {
-        console.log(
-          "The jqXHRObject that came back from testing.html: ",
-          jqXHRObject
-        );
-        console.log(
-          "The status text that came back from testing.html: ",
-          statusText
-        );
-        console.log(
-          "The error thrown that came back from testing.html: ",
-          errorThrownValue
-        );
-      })
-      .always(function () {
-        //   busy = false;
-      });
+    // $.get("data/testing.html")
+    //   .done(function (htmlDataFromFile, statusText, jqXHRObject) {
+    //     console.log(
+    //       "The data that came back from testing.html: ",
+    //       htmlDataFromFile
+    //     );
+    //     console.log(
+    //       "The status text that came back from testing.html: ",
+    //       statusText
+    //     );
+    //     console.log(
+    //       "The jqXHR object that came back from testing.html: ",
+    //       jqXHRObject
+    //     );
+    //     $("#content-wrapper").html(htmlDataFromFile);
+    //   })
+    //   .fail(function (jqXHRObject, statusText, errorThrownValue) {
+    //     console.log(
+    //       "The jqXHRObject that came back from testing.html: ",
+    //       jqXHRObject
+    //     );
+    //     console.log(
+    //       "The status text that came back from testing.html: ",
+    //       statusText
+    //     );
+    //     console.log(
+    //       "The error thrown that came back from testing.html: ",
+    //       errorThrownValue
+    //     );
+    //   })
+    //   .always(function () {
+    //     //   busy = false;
+    //   });
 
     // getting json data, and using the callback instead
     $.get(
