@@ -16,10 +16,10 @@ $(function () {
           jqXHRObject
         );
       })
-      .fail(function (dataThatCameBack, statusText, errorThrownValue) {
+      .fail(function (jqXHRObject, statusText, errorThrownValue) {
         console.log(
-          "The data that came back from test.html: ",
-          dataThatCameBack
+          "The jqXHRObject that came back from test.html: ",
+          jqXHRObject
         );
         console.log(
           "The status text that came back from test.html: ",
@@ -48,10 +48,10 @@ $(function () {
           jqXHRObject
         );
       })
-      .fail(function (dataThatCameBack, statusText, errorThrownValue) {
+      .fail(function (jqXHRObject, statusText, errorThrownValue) {
         console.log(
-          "The data that came back from testing.html: ",
-          dataThatCameBack
+          "The jqXHRObject that came back from testing.html: ",
+          jqXHRObject
         );
         console.log(
           "The status text that came back from testing.html: ",
