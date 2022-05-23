@@ -1,6 +1,70 @@
 $(function () {
   $("button#retrieve-data").on("click", function () {
-    $("#text-wrapper").load("data/ajax.html #text");
+    //   var busy = true;
+    $.get("test.html")
+      .done(function (htmlDataFromFile, statusText, jqXHRObject) {
+        console.log(
+          "The data that came back from test.html: ",
+          htmlDataFromFile
+        );
+        console.log(
+          "The status text that came back from test.html: ",
+          statusText
+        );
+        console.log(
+          "The jqXHR object that came back from test.html: ",
+          jqXHRObject
+        );
+      })
+      .fail(function (dataThatCameBack, statusText, errorThrownValue) {
+        console.log(
+          "The data that came back from test.html: ",
+          dataThatCameBack
+        );
+        console.log(
+          "The status text that came back from test.html: ",
+          statusText
+        );
+        console.log(
+          "The error thrown that came back from test.html: ",
+          errorThrownValue
+        );
+      })
+      .always(function () {
+        //   busy = false;
+      });
+    $.get("testing.html")
+      .done(function (htmlDataFromFile, statusText, jqXHRObject) {
+        console.log(
+          "The data that came back from testing.html: ",
+          htmlDataFromFile
+        );
+        console.log(
+          "The status text that came back from testing.html: ",
+          statusText
+        );
+        console.log(
+          "The jqXHR object that came back from testing.html: ",
+          jqXHRObject
+        );
+      })
+      .fail(function (dataThatCameBack, statusText, errorThrownValue) {
+        console.log(
+          "The data that came back from testing.html: ",
+          dataThatCameBack
+        );
+        console.log(
+          "The status text that came back from testing.html: ",
+          statusText
+        );
+        console.log(
+          "The error thrown that came back from testing.html: ",
+          errorThrownValue
+        );
+      })
+      .always(function () {
+        //   busy = false;
+      });
   });
 });
 
