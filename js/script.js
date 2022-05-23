@@ -1,6 +1,8 @@
 $(function () {
   $("button#retrieve-data").on("click", function () {
     //   var busy = true;
+
+    // this request comes back with good data
     $.get("data/test.html")
       .done(function (htmlDataFromFile, statusText, jqXHRObject) {
         console.log(
@@ -15,6 +17,7 @@ $(function () {
           "The jqXHR object that came back from test.html: ",
           jqXHRObject
         );
+        $("#content-wrapper").html(htmlDataFromFile);
       })
       .fail(function (jqXHRObject, statusText, errorThrownValue) {
         console.log(
@@ -33,6 +36,7 @@ $(function () {
       .always(function () {
         //   busy = false;
       });
+    // this request will fail
     $.get("data/testing.html")
       .done(function (htmlDataFromFile, statusText, jqXHRObject) {
         console.log(
@@ -47,6 +51,7 @@ $(function () {
           "The jqXHR object that came back from testing.html: ",
           jqXHRObject
         );
+        $("#content-wrapper").html(htmlDataFromFile);
       })
       .fail(function (jqXHRObject, statusText, errorThrownValue) {
         console.log(
@@ -65,6 +70,28 @@ $(function () {
       .always(function () {
         //   busy = false;
       });
+
+    // getting json data, and using the callback instead
+    $.get(
+      "data/test2.json",
+      "search=arduino", // just like when we did xhr.send("search=arduino")
+      function (JSONDataFromFile, statusText, jqXHRObject) {
+        // this will be called as if it was the done method
+        console.log(
+          "The data that came back from test2.json: ",
+          JSONDataFromFile
+        );
+        console.log(
+          "The status text that came back from test2.json: ",
+          statusText
+        );
+        console.log(
+          "The jqXHR object that came back from test2.json: ",
+          jqXHRObject
+        );
+        $("#content-wrapper").html(JSONDataFromFile);
+      }
+    );
   });
 });
 
