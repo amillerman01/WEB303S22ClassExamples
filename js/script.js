@@ -90,7 +90,13 @@ $(function () {
           "The jqXHR object that came back from test2.json: ",
           jqXHRObject
         );
-        $("#content-wrapper").html(JSONDataFromFile);
+        $.each(JSONDataFromFile.events, function (i, val) {
+          $("#content-wrapper").html(`
+          <h1>${val.location}</h1>
+          <div>${val.date}</div>
+          <img src="${val.map}">
+          `);
+        });
       }
     );
   });
