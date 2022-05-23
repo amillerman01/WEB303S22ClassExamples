@@ -1,110 +1,110 @@
 $(function () {
   $("button#retrieve-data").on("click", function () {
-    makeXHRCallForJSON();
+    $("#text-wrapper").load("data/ajax.html #text");
   });
 });
 
-function makeXHRCallForJSON() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "data/test.json");
+// function makeXHRCallForJSON() {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "data/test.json");
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      let el = document.getElementById("content");
-      let responseDataJSON = xhr.responseText;
-      console.log("This is the JSON response: ", responseDataJSON);
-      // responseDataJSON.location // can't do this
-      let responseDataObject = JSON.parse(responseDataJSON);
-      console.log("This is the Object version: ", responseDataObject);
-      console.log("Location value: ", responseDataObject.location);
-      /* the data looks something like this
-      
-        responseDataObject = {
-            location: "New York",
-            date: "may 30",
-            map: "img/newyork.png"
-        }
-      */
-      //   el.innerHTML = "<div>" + responseDataObject.location + "</div>";
-      el.innerHTML = `<div>${responseDataObject.location}</div>
-                      <div>${responseDataObject.date}</div>
-                      <div><img src="${responseDataObject.map}"></div>`;
+//   xhr.onload = function () {
+//     if (xhr.status === 200) {
+//       let el = document.getElementById("content");
+//       let responseDataJSON = xhr.responseText;
+//       console.log("This is the JSON response: ", responseDataJSON);
+//       // responseDataJSON.location // can't do this
+//       let responseDataObject = JSON.parse(responseDataJSON);
+//       console.log("This is the Object version: ", responseDataObject);
+//       console.log("Location value: ", responseDataObject.location);
+//       /* the data looks something like this
 
-      let responseDataTurnedBackToJSON = JSON.stringify(responseDataObject);
-      // need to add some way to parse the data, perhaps with DOMParser
-    }
-  };
+//         responseDataObject = {
+//             location: "New York",
+//             date: "may 30",
+//             map: "img/newyork.png"
+//         }
+//       */
+//       //   el.innerHTML = "<div>" + responseDataObject.location + "</div>";
+//       el.innerHTML = `<div>${responseDataObject.location}</div>
+//                       <div>${responseDataObject.date}</div>
+//                       <div><img src="${responseDataObject.map}"></div>`;
 
-  xhr.send();
-}
+//       let responseDataTurnedBackToJSON = JSON.stringify(responseDataObject);
+//       // need to add some way to parse the data, perhaps with DOMParser
+//     }
+//   };
 
-function makeXHRCallForJSONSecondTest() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "data/test2.json");
+//   xhr.send();
+// }
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      let el = document.getElementById("content");
-      let responseDataJSON = xhr.responseText;
-      console.log("This is the JSON response: ", responseDataJSON);
-      // responseDataJSON.location // can't do this
-      let responseDataObject = JSON.parse(responseDataJSON);
-      console.log("This is the Object version: ", responseDataObject);
-      /* the data looks something like this
-      
-        responseDataObject = [
-            {
-                location: "Austin, TX",
-                date: "may 15",
-                map: "img/austin.png"
-            },
-            {
-                location: "New York",
-                date: "may 30",
-                map: "img/newyork.png"
-            }
-        ]
-      */
-      // need to loop over responseDataObject.events, and then process each object
+// function makeXHRCallForJSONSecondTest() {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "data/test2.json");
 
-      //   el.innerHTML = `<div>${responseDataObject.location}</div>
-      //                   <div>${responseDataObject.date}</div>
-      //                   <div><img src="${responseDataObject.map}"></div>`;
+//   xhr.onload = function () {
+//     if (xhr.status === 200) {
+//       let el = document.getElementById("content");
+//       let responseDataJSON = xhr.responseText;
+//       console.log("This is the JSON response: ", responseDataJSON);
+//       // responseDataJSON.location // can't do this
+//       let responseDataObject = JSON.parse(responseDataJSON);
+//       console.log("This is the Object version: ", responseDataObject);
+//       /* the data looks something like this
 
-      let responseDataTurnedBackToJSON = JSON.stringify(responseDataObject);
-      // need to add some way to parse the data, perhaps with DOMParser
-    }
-  };
+//         responseDataObject = [
+//             {
+//                 location: "Austin, TX",
+//                 date: "may 15",
+//                 map: "img/austin.png"
+//             },
+//             {
+//                 location: "New York",
+//                 date: "may 30",
+//                 map: "img/newyork.png"
+//             }
+//         ]
+//       */
+//       // need to loop over responseDataObject.events, and then process each object
 
-  xhr.send();
-}
+//       //   el.innerHTML = `<div>${responseDataObject.location}</div>
+//       //                   <div>${responseDataObject.date}</div>
+//       //                   <div><img src="${responseDataObject.map}"></div>`;
 
-function makeXHRCallForHTML() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "data/test.html");
+//       let responseDataTurnedBackToJSON = JSON.stringify(responseDataObject);
+//       // need to add some way to parse the data, perhaps with DOMParser
+//     }
+//   };
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      let el = document.getElementById("content");
-      el.innerHTML = xhr.responseText;
-    }
-  };
+//   xhr.send();
+// }
 
-  xhr.send();
-}
+// function makeXHRCallForHTML() {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "data/test.html");
 
-function makeXHRCallForXML() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "data/test.xml");
+//   xhr.onload = function () {
+//     if (xhr.status === 200) {
+//       let el = document.getElementById("content");
+//       el.innerHTML = xhr.responseText;
+//     }
+//   };
 
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      let el = document.getElementById("content");
-      let responseData = xhr.responseXML;
-      console.log(responseData);
-      // need to add some way to parse the data, perhaps with DOMParser
-    }
-  };
+//   xhr.send();
+// }
 
-  xhr.send();
-}
+// function makeXHRCallForXML() {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "data/test.xml");
+
+//   xhr.onload = function () {
+//     if (xhr.status === 200) {
+//       let el = document.getElementById("content");
+//       let responseData = xhr.responseXML;
+//       console.log(responseData);
+//       // need to add some way to parse the data, perhaps with DOMParser
+//     }
+//   };
+
+//   xhr.send();
+// }
