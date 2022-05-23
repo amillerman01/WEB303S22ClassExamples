@@ -1,7 +1,7 @@
 $(function () {
   $("button#retrieve-data").on("click", function () {
     //   var busy = true;
-    $.get("test.html")
+    $.get("data/test.html")
       .done(function (htmlDataFromFile, statusText, jqXHRObject) {
         console.log(
           "The data that came back from test.html: ",
@@ -33,7 +33,7 @@ $(function () {
       .always(function () {
         //   busy = false;
       });
-    $.get("testing.html")
+    $.get("data/testing.html")
       .done(function (htmlDataFromFile, statusText, jqXHRObject) {
         console.log(
           "The data that came back from testing.html: ",
