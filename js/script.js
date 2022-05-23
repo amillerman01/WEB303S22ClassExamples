@@ -91,10 +91,10 @@ $(function () {
           jqXHRObject
         );
         $.each(JSONDataFromFile.events, function (i, val) {
-          $("#content-wrapper").html(`
-          <h1>${val.location}</h1>
-          <div>${val.date}</div>
-          <img src="${val.map}">
+          $("#content-wrapper").append(`
+          <h1 class="regularGetRequest">${val.location}</h1>
+          <div class="regularGetRequest">${val.date}</div>
+          <img src="${val.map}" class="regularGetRequest">
           `);
         });
       },
@@ -119,9 +119,11 @@ $(function () {
           jqXHRObject
         );
         $.each(JSONDataFromFile.events, function (i, val) {
-          let locationObject = $(`<h1>${val.location}</h1>`);
-          let dateObject = $(`<div>${val.date}</div>`);
-          let mapObject = $(`<img src="${val.map}">`);
+          let locationObject = $(
+            `<h1 class="getJSONRequest">${val.location}</h1>`
+          );
+          let dateObject = $(`<div class="getJSONRequest">${val.date}</div>`);
+          let mapObject = $(`<img src="${val.map}" class="getJSONRequest">`);
           $("#content-wrapper")
             .append(locationObject)
             .append(dateObject)
