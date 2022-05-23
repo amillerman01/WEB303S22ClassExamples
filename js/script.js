@@ -97,6 +97,36 @@ $(function () {
           <img src="${val.map}">
           `);
         });
+      },
+      "json"
+    );
+
+    // getting json data, and using the callback instead
+    $.getJSON(
+      "data/test2.json",
+      function (JSONDataFromFile, statusText, jqXHRObject) {
+        // this will be called as if it was the done method
+        console.log(
+          "The data that came back from test2.json: ",
+          JSONDataFromFile
+        );
+        console.log(
+          "The status text that came back from test2.json: ",
+          statusText
+        );
+        console.log(
+          "The jqXHR object that came back from test2.json: ",
+          jqXHRObject
+        );
+        $.each(JSONDataFromFile.events, function (i, val) {
+          let locationObject = $(`<h1>${val.location}</h1>`);
+          let dateObject = $(`<div>${val.date}</div>`);
+          let mapObject = $(`<img src="${val.map}">`);
+          $("#content-wrapper")
+            .append(locationObject)
+            .append(dateObject)
+            .append(mapObject);
+        });
       }
     );
   });
