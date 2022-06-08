@@ -9,6 +9,11 @@ function getName() {
 function getArrayValue(index) {
   var myArray = [0, 1, 6];
   console.info("Array contains: ", myArray);
+  // add a message to the console when index is NOT equal to 1
+  console.assert(
+    index === 1, // if condition is true, no console assert message will be added
+    "You're trying to access the second index value!"
+  );
   if (index > myArray.length) {
     console.warn(
       "Index was larger than array size. Max value for index should be: ",
@@ -44,13 +49,15 @@ function objectOperation() {
 // var greeting = greetUser();
 // console.log(greeting);
 
-// getArrayValue(2);
+getArrayValue(0);
+getArrayValue(1);
+getArrayValue(2);
 
 // getArrayValue(200);
 
 // console.log(10 + convertToNumber("three hundred"));
 
-objectOperation();
+// objectOperation();
 
 // $(function () {
 //   $("button#retrieve-data").on("click", function () {});
