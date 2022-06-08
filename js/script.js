@@ -3,15 +3,6 @@ function greetUser() {
 }
 function getName() {
   var name = "Molly";
-  var myObject = {
-    name: {
-      firstLetter: "A",
-      value: "Alex",
-    },
-  };
-  console.log("My object forced to be a string contains: " + myObject);
-  console.log("My object contains: ", myObject);
-  // console.log(myObject.name.firstLetter);
   return name;
 }
 
@@ -37,14 +28,29 @@ function convertToNumber(valueToConvert) {
   return parseInt(valueToConvert);
 }
 
-var greeting = greetUser();
-console.log(greeting);
+function objectOperation() {
+  var myObject = {
+    name: {
+      firstLetter: "A",
+      value: "Alex",
+    },
+  };
+  console.log("My object forced to be a string contains: " + myObject);
+  console.log("My object contains: ", myObject);
+  console.table(myObject);
+  // console.log(myObject.name.firstLetter);
+}
 
-getArrayValue(2);
+// var greeting = greetUser();
+// console.log(greeting);
 
-getArrayValue(200);
+// getArrayValue(2);
 
-console.log(10 + convertToNumber("three hundred"));
+// getArrayValue(200);
+
+// console.log(10 + convertToNumber("three hundred"));
+
+objectOperation();
 
 // $(function () {
 //   $("button#retrieve-data").on("click", function () {});
