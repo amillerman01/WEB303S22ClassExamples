@@ -12,8 +12,6 @@ function getName() {
   console.log("My object forced to be a string contains: " + myObject);
   console.log("My object contains: ", myObject);
   // console.log(myObject.name.firstLetter);
-  var number = 10 + parseInt(name);
-  console.log("Tried to add 10 to name. Resulted in: ", name);
   return name;
 }
 
@@ -30,12 +28,23 @@ function getArrayValue(index) {
   console.log("Array value at index", index, " is: ", myArray[index]);
 }
 
+function convertToNumber(valueToConvert) {
+  if (isNaN(valueToConvert)) {
+    console.error("The value provided is not a number! ", valueToConvert);
+    return -1;
+  }
+
+  return parseInt(valueToConvert);
+}
+
 var greeting = greetUser();
 console.log(greeting);
 
 getArrayValue(2);
 
 getArrayValue(200);
+
+console.log(10 + convertToNumber("three hundred"));
 
 // $(function () {
 //   $("button#retrieve-data").on("click", function () {});
