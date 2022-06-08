@@ -3,6 +3,17 @@ function greetUser() {
 }
 function getName() {
   var name = "Molly";
+  var myArray = [0, 1, 6];
+  console.log(myArray[100]);
+  var myObject = {
+    // name: {
+    //   firstLetter: "A",
+    //   value: "Alex",
+    // },
+  };
+  console.log(myObject.name.firstLetter);
+  var number = 10 + parseInt(name);
+  console.log(number);
   return name;
 }
 
