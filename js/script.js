@@ -3,13 +3,6 @@ function greetUser() {
 }
 function getName() {
   var name = "Molly";
-  var myArray = [0, 1, 6];
-  console.log(
-    "Array value at index 100 is: ",
-    myArray[100],
-    " and the entire array contains: ",
-    myArray
-  );
   var myObject = {
     name: {
       firstLetter: "A",
@@ -24,8 +17,25 @@ function getName() {
   return name;
 }
 
+function getArrayValue(index) {
+  var myArray = [0, 1, 6];
+  console.info("Array contains: ", myArray);
+  if (index > myArray.length) {
+    console.warn(
+      "Index was larger than array size. Max value for index should be: ",
+      myArray.length - 1
+    );
+    return;
+  }
+  console.log("Array value at index", index, " is: ", myArray[index]);
+}
+
 var greeting = greetUser();
 console.log(greeting);
+
+getArrayValue(2);
+
+getArrayValue(200);
 
 // $(function () {
 //   $("button#retrieve-data").on("click", function () {});
