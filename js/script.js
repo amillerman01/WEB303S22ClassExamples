@@ -4,7 +4,12 @@ function greetUser() {
 function getName() {
   var name = "Molly";
   var myArray = [0, 1, 6];
-  console.log(myArray[100]);
+  console.log(
+    "Array value at index 100 is: ",
+    myArray[100],
+    " and the entire array contains: ",
+    myArray
+  );
   var myObject = {
     name: {
       firstLetter: "A",
