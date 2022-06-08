@@ -6,14 +6,16 @@ function getName() {
   var myArray = [0, 1, 6];
   console.log(myArray[100]);
   var myObject = {
-    // name: {
-    //   firstLetter: "A",
-    //   value: "Alex",
-    // },
+    name: {
+      firstLetter: "A",
+      value: "Alex",
+    },
   };
-  console.log(myObject.name.firstLetter);
+  console.log("My object forced to be a string contains: " + myObject);
+  console.log("My object contains: ", myObject);
+  // console.log(myObject.name.firstLetter);
   var number = 10 + parseInt(name);
-  console.log(number);
+  console.log("Tried to add 10 to name. Resulted in: ", name);
   return name;
 }
 
