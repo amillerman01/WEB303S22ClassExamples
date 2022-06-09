@@ -38,29 +38,42 @@ function convertToNumber(valueToConvert) {
 
 function objectOperation() {
   var myObject = {
-    name: {
-      firstLetter: "A",
-      value: "Alex",
-    },
+    // name: {
+    //   firstLetter: "A",
+    //   value: "Alex",
+    // },
   };
   console.log("My object forced to be a string contains: " + myObject);
   console.log("My object contains: ", myObject);
   console.table(myObject);
-  // console.log(myObject.name.firstLetter);
+  console.log(myObject.name.firstLetter);
 }
 
 // var greeting = greetUser();
 // console.log(greeting);
 
-getArrayValue(0);
-getArrayValue(1);
-getArrayValue(2);
+// getArrayValue(0);
+// getArrayValue(1);
+// getArrayValue(2);
 
 // getArrayValue(200);
 
 // console.log(10 + convertToNumber("three hundred"));
 
-// objectOperation();
+var busy = false;
+
+try {
+  busy = true; // show the fancy spinning loader while we run objectOperation
+  objectOperation();
+  // any code below this will not run if objectOperation throws an exception
+  // busy = false; // hide the spinning loader afterwards
+} catch (e) {
+  console.error(e);
+  // busy = false; // hide the spinning loader afterwards
+} finally {
+  // we reset busy here, so we can write it once, keep our code DRY, and make sure it's always done
+  busy = false; // hide the spinning loader afterwards
+}
 
 // $(function () {
 //   $("button#retrieve-data").on("click", function () {});
