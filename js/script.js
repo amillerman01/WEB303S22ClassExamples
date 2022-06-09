@@ -14,6 +14,9 @@ function getArrayValue(index) {
     index === 1, // if condition is true, no console assert message will be added
     "You're trying to access the second index value!"
   );
+  if (index != 1) {
+    debugger;
+  }
   if (index > myArray.length) {
     console.warn(
       "Index was larger than array size. Max value for index should be: ",
