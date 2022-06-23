@@ -130,3 +130,23 @@ if ("celsius" in temp) {
   // safe to use celsius property
   console.log(temp.celsius);
 }
+
+if ("humidity" in temp) {
+  // safe to use celsius property
+  // console.log("Humidity is: ", temp.humidity);
+  //  this is the same as the line above, just different syntax
+  console.log("Humidity is: ", temp["humidity"]);
+}
+
+// I'm expecting celsius, humidity, maybe fahrenheit
+for (const property in temp) {
+  console.log(`Property name: ${property}`);
+
+  // we can't do this, this would try to find the property variable in the temp variable (which is an instance of the Temperature class)
+  // console.log(`Property value: ${temp.property}`);
+
+  // this looks for each individual property inside of temp (which is an instance of the Temperature class)
+  console.log(`Property value: ${temp[property]}`);
+}
+
+// for in does not return getters and setters as if they were properties, unlike the in check before!
