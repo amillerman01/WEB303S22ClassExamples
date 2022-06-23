@@ -119,3 +119,14 @@ console.log(temp.fahrenheit);
 console.log(temp + "");
 // temp.celsius = 18;
 // console.log(temp.fahrenheit);
+
+console.log("celsius" in temp);
+console.log("fahrenheit" in temp);
+console.log("toString" in temp);
+console.log("humid" in temp);
+console.log("humidity" in temp);
+
+if ("celsius" in temp) {
+  // safe to use celsius property
+  console.log(temp.celsius);
+}
