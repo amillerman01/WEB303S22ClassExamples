@@ -50,21 +50,40 @@
 
 // third example of object lecture
 
-function Animal(t) {
-  this.type = t;
+// function Animal(t) {
+//   this.type = t;
+// }
+
+// Animal.prototype.toString = function animalToString() {
+//   // return `This animal is a ${this.type}`;
+//   return "This animal is a " + this.type;
+// };
+
+// let fluffyRabbit = new Animal("Rabbit");
+
+// let hungryWolf = new Animal("Wolf");
+
+// let loudElephant = new Animal("Elephant");
+
+// console.log("The first variable: " + fluffyRabbit);
+// console.log(`The second variable: ${hungryWolf}`);
+// console.log("The third variable:", loudElephant.toString());
+
+// fourth example of object lecture
+
+class Animal {
+  // type; // property belonging to the class
+  constructor(t) {
+    this.type = t;
+  }
+
+  toString() {
+    return `This animal is a ${this.type}`;
+  }
 }
 
-Animal.prototype.toString = function animalToString() {
-  // return `This animal is a ${this.type}`;
-  return "This animal is a " + this.type;
-};
-
-let fluffyRabbit = new Animal("Rabbit");
-
-let hungryWolf = new Animal("Wolf");
-
-let loudElephant = new Animal("Elephant");
-
-console.log("The first variable: " + fluffyRabbit);
-console.log(`The second variable: ${hungryWolf}`);
-console.log("The third variable:", loudElephant.toString());
+let rabbit = new Animal("Rabbit");
+let rabbitString = `The animal says: ${rabbit}`;
+// note: console.log doesn't invoke toString
+console.log(rabbit);
+console.log(rabbitString);
