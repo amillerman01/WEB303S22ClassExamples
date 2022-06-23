@@ -29,15 +29,42 @@
 
 // this makes sure out speak method doesn’t output undefined
 
-var color = "rainbow";
+// var color = "rainbow";
 
-const speak = (line) => {
-  console.log(`The ${this.color} rabbit says "${line}"`);
+// const speak = (line) => {
+//   console.log(`The ${this.color} rabbit says "${line}"`);
+// };
+
+// let rabbit = {
+//   color: "white",
+//   speak: speak,
+// };
+
+// let greyRabbit = {
+//   color: "grey",
+//   speak: speak,
+// };
+
+// rabbit.speak("I'm late and a different colour!");
+// greyRabbit.speak("I'm not in Alice in Wonderland");
+
+// third example of object lecture
+
+function Animal(t) {
+  this.type = t;
+}
+
+Animal.prototype.toString = function animalToString() {
+  // return `This animal is a ${this.type}`;
+  return "This animal is a " + this.type;
 };
 
-let rabbit = {
-  color: "white",
-  speak: speak,
-};
+let fluffyRabbit = new Animal("Rabbit");
 
-rabbit.speak("I'm late and a different colour!");
+let hungryWolf = new Animal("Wolf");
+
+let loudElephant = new Animal("Elephant");
+
+console.log("The first variable: " + fluffyRabbit);
+console.log(`The second variable: ${hungryWolf}`);
+console.log("The third variable:", loudElephant.toString());
