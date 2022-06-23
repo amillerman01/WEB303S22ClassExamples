@@ -71,19 +71,51 @@
 
 // fourth example of object lecture
 
-class Animal {
-  // type; // property belonging to the class
-  constructor(t) {
-    this.type = t;
+// class Animal {
+//   // type; // property belonging to the class
+//   constructor(t) {
+//     this.type = t;
+//   }
+
+//   toString() {
+//     return `This animal is a ${this.type}`;
+//   }
+// }
+
+// let rabbit = new Animal("Rabbit");
+// let rabbitString = `The animal says: ${rabbit}`;
+// // note: console.log doesn't invoke toString
+// console.log(rabbit);
+// console.log(rabbitString);
+
+// fifth example of object lecture
+
+class Temperature {
+  constructor(c, h) {
+    this.celsius = c;
+    this.humidity = h;
+  }
+  // public decimal Fahrenheit { get; set; } = 3.1415;
+
+  get fahrenheit() {
+    return (this.celsius * 1.8 + 32).toFixed(2);
+  }
+
+  set fahrenheit(value) {
+    this.celsius = (value - 32) / 1.8;
   }
 
   toString() {
-    return `This animal is a ${this.type}`;
+    return `The temperature is ${this.celsius.toFixed(
+      2
+    )}°C and the humidity is ${this.humidity}%`;
   }
 }
 
-let rabbit = new Animal("Rabbit");
-let rabbitString = `The animal says: ${rabbit}`;
-// note: console.log doesn't invoke toString
-console.log(rabbit);
-console.log(rabbitString);
+let temp = new Temperature(37, 50);
+console.log(temp.fahrenheit);
+temp.fahrenheit = 72;
+console.log(temp.fahrenheit);
+console.log(temp + "");
+// temp.celsius = 18;
+// console.log(temp.fahrenheit);
